@@ -11,6 +11,16 @@ module UltrasphinxSearch
       tag.locals.results = tag.locals.page.results
       tag.expand
     end
+    
+    desc %{
+      Presents the query string
+
+      *Usage:*
+      <pre><code><r:results:query /></code></pre>
+    }
+    tag 'results:query' do |tag|
+      @query
+    end
 
     desc %{
       Cycles through each of the search results. Inside this tag the page attributes are mapped to the current result.
