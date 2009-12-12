@@ -4,7 +4,8 @@ module UltrasphinxSearch
       base.class_eval do
         is_indexed :fields => ["title"],
                    :concatenate => [{:association_name => 'parts', :field => 'content', :as => 'page_part_content'}],
-                   :delta => true
+                   :delta => true,
+                   :conditions => "pages.status_id = 100"
       end
       
       base.send(:include, InstanceMethods)
